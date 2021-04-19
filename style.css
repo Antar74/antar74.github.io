@@ -1,0 +1,33 @@
+
+.gris-color{color:#D1D3D4;}
+.gris-fondo{background-color:#D1D3D4;}
+
+
+
+body{
+  font-family: 'Fira Sans', sans-serif;
+  color:#372929;
+}
+
+.texto-normal {
+  font-size: 1rem;
+}
+.texto-chico {
+  font-size: 0.8rem;
+}
+.texto-intro {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.colgado {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+.titulo-normal{
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+.titulo-mediano{
+  font-size: 4rem;
+  font-weight: 900;
+}
