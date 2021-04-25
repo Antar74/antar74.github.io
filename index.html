@@ -10,7 +10,10 @@
   <link rel="stylesheet" href="style.css">
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <!-- AOS animation library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 <body>
@@ -192,15 +195,32 @@
 
 <!-- contenedor INICIO end -->
 
-<!-- contenedor FICHAS
+<!-- contenedor  -->
 
 <div class="container">
+  <div class="row">
+    <div class="col">
 
+            <!-- VIDEOINTRO -->
 
+            <div class="mt-5 video-wrapper ratio-16-9" data-aos="fade-up">
+
+                    <div class="youtube" data-embed="06z3OqDMyEU">
+
+                        <div class="play-button"></div>
+
+                    </div>
+
+            </div>
+
+            <!-- VIDEOINTRO end -->
+
+    </div>
+  </div>
 </div>
--->
 
-<!-- contenedor FICHAS end -->
+
+<!-- contenedor  end -->
 
 <!-- contenedor BLOG
 
@@ -236,11 +256,66 @@
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
 
-    $('#h7mm-c').carousel({interval: 65000});
-    $('#cumulos-c').carousel({interval: 50});
+  $('#h7mm-c').carousel({interval: 65000});
+  $('#cumulos-c').carousel({interval: 50});
+
+
 
 });
 </script>
+
+
+<!-- YOUTUBE LAZY LOAD -->
+
+<script>
+
+$(document).ready(function() {
+
+	var youtube = document.querySelectorAll( ".youtube" );
+
+	for (var i = 0; i < youtube.length; i++) {
+
+		var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/sddefault.jpg";
+
+		var image = new Image();
+				image.src = source;
+				image.addEventListener( "load", function() {
+					youtube[ i ].appendChild( image );
+				}( i ) );
+
+				youtube[i].addEventListener( "click", function() {
+
+					var iframe = document.createElement( "iframe" );
+
+							iframe.setAttribute( "frameborder", "0" );
+							iframe.setAttribute( "allowfullscreen", "" );
+							iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1" );
+
+							this.innerHTML = "";
+							this.appendChild( iframe );
+				} );
+	};
+
+});
+</script>
+
+
+<!-- YOUTUBE LAZY LOAD end
+https://webdesign.tutsplus.com/tutorials/how-to-lazy-load-embedded-youtube-videos--cms-26743 -->
+
+
+
+<!-- AOS animation library -->
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+			AOS.init({
+				easing: 'ease-out-back',
+				duration: 1000
+			});
+</script>
+
+<!-- AOS animation library end-->
 
 </body>
 </html>
