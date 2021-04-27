@@ -17,6 +17,7 @@ body{
 }
 .texto-chico {
   font-size: 0.8rem;
+  line-height: 1rem;
 }
 .texto-intro {
   font-size: 1.8rem;
